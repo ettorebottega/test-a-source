@@ -13,7 +13,7 @@ begin
   try
     WriteLn('Hello world!');
 
-    TFile.AppendAllText('testfile.txt', 'Message written.');
+    TMyWorker.DoWriteOnFile('testfile.txt', 'Message written.');
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);

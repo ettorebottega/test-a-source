@@ -11,7 +11,7 @@ type
     FDescription: string;
     procedure SetDescription(const Value: string);
   public
-    procedure DoWriteOnFile(const AFileName, AText: string);
+    class procedure DoWriteOnFile(const AFileName, AText: string);
     property Description: string read FDescription write SetDescription;
   end;
 
@@ -19,7 +19,7 @@ implementation
 
 { TMyWorker }
 
-procedure TMyWorker.DoWriteOnFile(const AFileName, AText: string);
+class procedure TMyWorker.DoWriteOnFile(const AFileName, AText: string);
 begin
   TFile.AppendAllText(AFileName, AText);
 end;
